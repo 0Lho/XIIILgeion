@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XIIIL — Клан</title>
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(180deg, #080808, #161616);
+    color: #fff;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* Фоновое лого */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("logo.png") no-repeat center center;
+    background-size: 55%;
+    opacity: 0.07;
+    filter: drop-shadow(0 0 20px #ff3c00);
+    z-index: -1;
+  }
+
+  header {
+    background: rgba(0, 0, 0, 0.85);
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #ff3c00;
+    box-shadow: 0 0 20px rgba(255, 60, 0, 0.5);
+    animation: fadeIn 1.2s ease-out;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    background: #111;
+    padding: 10px 0;
+    border-bottom: 1px solid #ff3c00;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 0 15px rgba(255, 60, 0, 0.3);
+  }
+  nav a {
+    color: #ff3c00;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  nav a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #ff3c00, 0 0 20px #ff3c00;
+  }
+
+  section {
+    padding: 80px 20px;
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+    line-height: 1.7;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.2s ease, transform 1.2s ease;
+  }
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  h1, h2 {
+    color: #ff3c00;
+    margin-bottom: 10px;
+    text-shadow: 0 0 15px rgba(255, 60, 0, 0.7);
+  }
+
+  .logo {
+    width: 180px;
+    margin-top: 10px;
+    filter: drop-shadow(0 0 8px #ff3c00);
+    transition: transform 0.5s ease;
+  }
+  .logo:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 20px #ff3c00);
+  }
+
+  footer {
+    background: #111;
+    color: #ff3c00;
+    text-align: center;
+    padding: 15px;
+    border-top: 2px solid #ff3c00;
+    box-shadow: 0 0 20px rgba(255, 60, 0, 0.5);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  Клан XIIIL
+</header>
+
+<nav>
+  <a href="#main">Главная</a>
+  <a href="#about">О клане</a>
+  <a href="#rules">Требования</a>
+  <a href="#contacts">Контакты</a>
+</nav>
+
+<section id="main">
+  <h1>Главная</h1>
+  <p>
+    XIIIL — это не просто клан, а сила, рожденная в огне испытаний.  
+    Мы — братство, объединённое целями, опытом и огнём внутри.  
+    <br><br>
+    ⚔️ Мы не следуем за легендами — мы их создаём.  
+    <br><br>
+    🔥 Каждый участник XIIIL — это искра, из которой рождается пламя побед.
+  </p>
+</section>
+
+<section id="about">
+  <h1>О клане</h1>
+  <p>
+    Основанный в 2020 году, XIIIL вырос из небольшой группы бойцов в мощное игровое сообщество.  
+    Мы объединяем людей, которые ценят силу, честь и верность своим.  
+    <br><br>
+    Наш символ — пылающий феникс. Он отражает суть клана:  
+    возрождаться из пепла сильнее, чем прежде.
+  </p>
+</section>
+
+<section id="rules">
+  <h1>Требования</h1>
+  <p>
+    💠 Минимальный уровень — 30+<br>
+    🔥 Активность минимум 3 раза в неделю<br>
+    ⚔️ Уважение и взаимопомощь<br>
+    🛡️ Участие в событиях и тренировках
+  </p>
+</section>
+
+<section id="contacts">
+  <h1>Контакты</h1>
+  <p>
+    Для вступления или сотрудничества свяжитесь с нами:<br><br>
+    📧 Email: <a href="mailto:xiiil@gameclan.net" style="color:#ff3c00;">xiiil@gameclan.net</a><br>
+    💬 Discord: <strong>XIIIL#2025</strong><br>
+    🌐 GitHub Pages: <a href="https://0lho.github.io/xiiilegion/" style="color:#ff3c00;">0lho.github.io/xiiilegion</a>
+  </p>
+</section>
+
+<footer>
+  © 2025 XIIIL — Сила в огне
+</footer>
+
+<script>
+  // Плавное появление блоков при прокрутке
+  const sections = document.querySelectorAll('section');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  sections.forEach(section => observer.observe(section));
+</script>
+
+</body>
+</html>
+
+
+
